@@ -8,11 +8,55 @@
   <style>
     :root{--primary:#0b6e4f;--accent:#ffb03b;--muted:#666}
     *{box-sizing:border-box}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.6;margin:0;color:#222}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.6;margin:0;color:#222;background:#f7faf7}
     header{background:var(--primary);color:#fff;padding:18px 16px}
     .container{max-width:1100px;margin:0 auto;padding:24px}
     nav{display:flex;gap:16px;align-items:center;justify-content:space-between}
-    .brand{font-weight:700}
+
+    /* Neon brand */
+    .brand{
+      font-weight:900;
+      font-size:18px;
+      display:inline-block;
+      padding:6px 10px;
+      position:relative;
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      background-image:linear-gradient(90deg,#ff2d95,#ffd300,#4ce1ff,#7bff7b,#ff2d95);
+      background-size:300% 100%;
+      animation:neonShift 6s linear infinite, brandPulse 3s ease-in-out infinite;
+      text-shadow:0 0 6px rgba(255,45,149,0.8),0 0 12px rgba(255,211,0,0.6),0 0 24px rgba(76,225,255,0.4);
+      -webkit-text-fill-color:transparent;
+    }
+
+    /* shimmer / color cycling */
+    @keyframes neonShift{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    /* flow/fade loop (ไหลไปวนหายแล้วกลับมาใหม่) */
+    @keyframes brandPulse{
+      0%{opacity:1; transform:translateX(0) scale(1)}
+      40%{opacity:1; transform:translateX(-6px) scale(1.02)}
+      60%{opacity:0; transform:translateX(30px) scale(0.98)}
+      100%{opacity:1; transform:translateX(0) scale(1)}
+    }
+
+    /* subtle flicker to mimic neon */
+    @keyframes neonFlicker{
+      0%,100%{opacity:1}
+      2%{opacity:0.85}
+      8%{opacity:1}
+      9%{opacity:0.7}
+      11%{opacity:1}
+      20%{opacity:0.95}
+      21%{opacity:1}
+    }
+    /* apply flicker randomly via JS (class added) */
+
     .nav-links a{color:#fff;text-decoration:none;margin-left:12px;font-weight:600}
     .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:48px 0;color:#083a2b}
     .hero-inner{background:#f6fff9;padding:28px;border-radius:10px}
@@ -36,7 +80,7 @@
   <header>
     <div class="container">
       <nav>
-        <div class="brand">โรงเรียนบ้านหนองโป่ง(ราษฎร์บำรุง)</div>
+        <div class="brand" id="site-brand" aria-label="โรงเรียนบ้านหนองโป่ง(ราษฎร์บำรุง)">โรงเรียนบ้านหนองโป่ง(ราษฎร์บำรุง)</div>
         <div class="nav-links">
           <a href="/">หน้าแรก</a>
           <a href="/about">เกี่ยวกับ</a>
@@ -160,6 +204,23 @@
         if(cur>=target){cur=target;el.textContent=target;clearInterval(id);} else el.textContent = cur;
       },16);
     });
+
+    // Add occasional neon flicker to make the neon feel more organic
+    (function(){
+      const brand = document.getElementById('site-brand');
+      if(!brand) return;
+      function flickerOnce(){
+        brand.style.animation = 'neonShift 6s linear infinite, brandPulse 3s ease-in-out infinite, neonFlicker 0.9s steps(1, end)';
+        setTimeout(()=>{
+          // remove flicker to avoid constant jitter, keep main animations
+          brand.style.animation = 'neonShift 6s linear infinite, brandPulse 3s ease-in-out infinite';
+        },900);
+      }
+      // randomize flicker intervals between 4s and 12s
+      setInterval(()=>{
+        if(Math.random()<0.5) flickerOnce();
+      },4000);
+    })();
   </script>
 </body>
 </html>
