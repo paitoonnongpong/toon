@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>โรงเรียนบ้านหนองโป่ง(ราษฎร์บำรุง) — เว็บไซต์โรงเรียนครบระบบ</title>
+  <meta name="description" content="เว็บไซต์ทางการ โรงเรียนบ้านหนองโป่ง(ราษฎร์บำรุง) สพป.นครราชสีมา เขต 7">
+  <style>
+    :root{--primary:#0b6e4f;--accent:#ffb03b;--muted:#666}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.6;margin:0;color:#222}
+    header{background:var(--primary);color:#fff;padding:18px 16px}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    nav{display:flex;gap:16px;align-items:center;justify-content:space-between}
+    .brand{font-weight:700}
+    .nav-links a{color:#fff;text-decoration:none;margin-left:12px;font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:48px 0;color:#083a2b}
+    .hero-inner{background:#f6fff9;padding:28px;border-radius:10px}
+    .hero h1{margin:0 0 8px;font-size:28px}
+    .hero p{margin:0;color:var(--muted)}
+    .quick-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+    .ql{background:#fff;border:1px solid #e6e6e6;padding:12px;border-radius:8px;flex:1 1 140px;text-align:center}
+    .stats{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .stat{background:var(--primary);color:#fff;padding:16px;border-radius:8px;flex:1 1 150px;text-align:center}
+    .news, .activities, .gallery{margin-top:28px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .card{background:#fff;border:1px solid #eee;padding:12px;border-radius:8px}
+    .gallery img{width:100%;height:150px;object-fit:cover;border-radius:6px}
+    .cta{background:linear-gradient(90deg,var(--primary),#0a8258);color:#fff;padding:28px;border-radius:10px;display:flex;align-items:center;justify-content:space-between;margin-top:24px}
+    footer{background:#0f1720;color:#fff;padding:20px;margin-top:32px}
+    button.primary{background:var(--accent);border:none;color:#111;padding:10px 16px;border-radius:6px;font-weight:700}
+    @media(min-width:800px){.hero{grid-template-columns:1fr 420px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">โรงเรียนบ้านหนองโป่ง(ราษฎร์บำรุง)</div>
+        <div class="nav-links">
+          <a href="/">หน้าแรก</a>
+          <a href="/about">เกี่ยวกับ</a>
+          <a href="/academics">วิชาการ</a>
+          <a href="/news">ข่าว/กิจกรรม</a>
+          <a href="/admissions">การรับสมัคร</a>
+          <a href="/contact">ติดต่อเรา</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>โรงเรียนบ้านหนองโป่ง(ราษฎร์บำรุง)</h1>
+        <p>สพป.นครราชสีมา เขต 7 — เว็บไซต์โรงเรียนครบระบบ ข่าวสาร วิชาการ การรับสมัคร และช่องทางติดต่อ</p>
+
+        <div class="quick-links" aria-label="ลิงก์ด่วน">
+          <a class="ql" href="/admissions">สมัครเรียน</a>
+          <a class="ql" href="/news">ข่าวล่าสุด</a>
+          <a class="ql" href="/academics">แผนการเรียน</a>
+          <a class="ql" href="/contact">ติดต่อโรงเรียน</a>
+        </div>
+
+        <div class="stats" aria-hidden="false">
+          <div class="stat"><div class="num" data-target="480">0</div><div>นักเรียน</div></div>
+          <div class="stat"><div class="num" data-target="42">0</div><div>ครู/บุคลากร</div></div>
+          <div class="stat"><div class="num" data-target="8">0</div><div>คณะผู้บริหาร</div></div>
+        </div>
+      </div>
+
+      <div>
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop&s=placeholder" alt="ภาพโรงเรียน" style="width:100%;border-radius:10px;height:100%;object-fit:cover">
+      </div>
+    </section>
+
+    <!-- ข่าวล่าสุด -->
+    <section class="news">
+      <h2>ข่าวล่าสุด</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="/news/1">พิธี 50 ปี โรงเรียนบ้านหนองโป่ง(ราษฎร์บำรุง)</a></h3>
+          <p class="muted">วันที่ 1 กรกฎาคม 2569 — งานเฉลิมฉลองเนื่องในโอกาสครบรอบ 50 ปี</p>
+        </article>
+        <article class="card">
+          <h3><a href="/news/2">นักเรียนคว้ารางวัลการประกวดวิชาการ</a></h3>
+          <p class="muted">นักเรียนได้รับรางวัลจากงานระดับจังหวัด</p>
+        </article>
+        <article class="card">
+          <h3><a href="/news/3">โครงการปลูกต้นไม้เพื่อสิ่งแวดล้อม</a></h3>
+          <p class="muted">กิจกรรมเพื่อชุมชนและสิ่งแวดล้อม</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- กิจกรรม -->
+    <section class="activities">
+      <h2>กิจกรรมและปฏิทิน</h2>
+      <div class="card">
+        <table style="width:100%;border-collapse:collapse">
+          <thead>
+            <tr style="text-align:left;border-bottom:1px solid #eee"><th>วันที่</th><th>กิจกรรม</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>10 ก.ค. 2569</td><td>ประชุมผู้ปกครอง</td></tr>
+            <tr><td>20 ส.ค. 2569</td><td>งานกีฬาสี</td></tr>
+            <tr><td>15 ก.ย. 2569</td><td>อบรมครูเชิงปฏิบัติการ</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+      <h2>ภาพกิจกรรม</h2>
+      <div class="grid">
+        <div class="card"><img src="https://images.unsplash.com/photo-1527979809883-5a3a1e8387b3?q=80&w=800&auto=format&fit=crop&s=placeholder" alt="กิจกรรม 1"></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=800&auto=format&fit=crop&s=placeholder" alt="กิจกรรม 2"></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop&s=placeholder" alt="กิจกรรม 3"></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800&auto=format&fit=crop&s=placeholder" alt="กิจกรรม 4"></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div>
+        <h3 style="margin:0">ร่วมเป็นส่วนหนึ่งของชุมชนโรงเรียน</h3>
+        <p style="margin:6px 0 0">เยี่ยมชมโรงเรียน สมัครเรียน หรือร่วมบริจาคเพื่อพัฒนาโรงเรียน</p>
+      </div>
+      <div>
+        <a href="/admissions"><button class="primary">สมัครเรียน/ติดต่อเรา</button></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <strong>โรงเรียนบ้านหนองโป่ง(ราษฎร์บำรุง)</strong>
+        <div>ที่อยู่: อ. ... จังหวัดนครราชสีมา</div>
+        <div>โทร: 0x-xxx-xxxx</div>
+      </div>
+      <div>
+        <div>ติดตามเรา:</div>
+        <div style="margin-top:6px">Facebook • Line • Youtube</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Stats counter
+    document.querySelectorAll('.num').forEach(el=>{
+      const target = +el.dataset.target || 0;
+      let cur = 0;
+      const step = Math.max(1, Math.floor(target/60));
+      const id = setInterval(()=>{
+        cur += step;
+        if(cur>=target){cur=target;el.textContent=target;clearInterval(id);} else el.textContent = cur;
+      },16);
+    });
+  </script>
+</body>
+</html>
